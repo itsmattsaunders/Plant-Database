@@ -1,12 +1,9 @@
 import React from "react";
-import Greeting from "./gallery"
 
 class App extends React.Component{
   render() {
     return (
-      <>
-        <Greeting />
-      </>
+      <h1>React App :-)</h1>
     )
   }
  }

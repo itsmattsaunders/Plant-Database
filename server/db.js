@@ -3,7 +3,6 @@ const config = require("./knexfile");
 const env = process.env.NODE_ENV || "development";
 const database = knex(config[env]);
 
-
 module.exports = {
   getPlant,
   getPlantById,
@@ -11,7 +10,6 @@ module.exports = {
   updatePlant,
   deletePlant
 }
-
 
 //GET REQUESTS
 function getPlant(db = database){
@@ -30,6 +28,7 @@ function getPlantById(id, db = database){
 
 //POST REQUESTS
 function postPlant(plant, db = database){
+  console.log('db.js, line 31', plant)
   return db("plants").insert(plant)
 }
 

@@ -5,11 +5,13 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      filename: './server/dev.sqlite3'
     },
-    useNullAsDefault: true
+    migrations: {
+      directory: './migrations'
+    },
+    useNullAsDefault: true,
   },
-  
 
   staging: {
     client: 'postgresql',
@@ -40,16 +42,6 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations'
-    }
-  },
-
-  test: {
-    client: 'sqlite3',
-    connection: {
-      filename: ':memory:'
-    },
-    seeds: {
-      directory: './tests/seeds'
     }
   }
 
